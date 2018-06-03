@@ -2,6 +2,7 @@ package com.example.mateu.gamesdraganddrop;
 
 import android.content.ClipData;
 import android.os.Build;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.DragEvent;
@@ -13,8 +14,11 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.mateu.gamesdraganddrop.Tabuleiro.Tabuleiro;
+
 public class ActQuebraCabeca extends AppCompatActivity implements View.OnDragListener, View.OnTouchListener {
 
+    private Tabuleiro tabuleiro;
     private LinearLayout lLImgsQuebraCabeca;
     private GridLayout gridTabuleiro;
 
@@ -28,6 +32,8 @@ public class ActQuebraCabeca extends AppCompatActivity implements View.OnDragLis
     }
 
     private void inicializaComponentes(){
+
+        tabuleiro = new Tabuleiro();
 
         lLImgsQuebraCabeca = findViewById(R.id.lLImgsQuebraCabeca);
 
@@ -103,4 +109,49 @@ public class ActQuebraCabeca extends AppCompatActivity implements View.OnDragLis
 
         return false;
     }
+
+
+    public void btnVerifiarQb(View view) {
+
+        String acertou = (verificaTabuleiro())? "Parabéns Você Acertou!" : "Que pena, Você Errou!";
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+        alert.setTitle("Aviso");
+        alert.setMessage(acertou);
+        alert.setNeutralButton("Ok", null);
+        alert.show();
+
+    }
+
+    private boolean verificaTabuleiro(){
+
+        int amountChild = gridTabuleiro.getChildCount();
+
+        boolean acertouTodas = true;
+
+        for(int i = 0; i < amountChild; i++) {
+
+            LinearLayout linearLayout = (LinearLayout) gridTabuleiro.getChildAt(i);
+
+            Integer posicaoImg = null;
+
+            if(linearLayout.getChildCount() > 1)
+                posicaoImg = Integer.parseInt(linearLayout.getChildAt(1).getTag().toString());
+
+
+            if (posicaoImg == null)
+                return false;
+
+            if(tabuleiro.getImagem(posicaoImg) != tabuleiro.getImagem(i))
+                return false;
+
+
+
+        }
+
+        return acertouTodas;
+
+    }
+
 }
