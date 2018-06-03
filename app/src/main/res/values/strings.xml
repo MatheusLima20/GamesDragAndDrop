@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">GamesDragAndDrop</string>
+    <string name="escolha_um_game">Escolha Um Game</string>
+    <string name="quebra_cabeca">Quebra Cabeça</string>
+    <string name="quebra_cabeca_slider">Quebra Cabeça Slider</string>
+</resources>
