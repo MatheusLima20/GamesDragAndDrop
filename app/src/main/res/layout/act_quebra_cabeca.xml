@@ -15,7 +15,7 @@
         android:text="@string/quebra_cabeca"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -34,8 +34,8 @@
             app:srcCompat="@drawable/paisagem" />
 
         <LinearLayout
-            android:layout_width="140dp"
-            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginLeft="50dp"
             android:orientation="vertical">
 
@@ -64,8 +64,8 @@
 
                 <LinearLayout
                     android:id="@+id/lLImgsQuebraCabeca"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
+                    android:layout_width="500dp"
+                    android:layout_height="wrap_content"
                     android:background="@android:color/holo_blue_bright"
                     android:gravity="left"
                     android:orientation="vertical">
@@ -337,13 +337,15 @@
             </ScrollView>
 
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <GridLayout
             android:id="@+id/tabuleiro"
@@ -634,14 +636,32 @@
             </LinearLayout>
         </GridLayout>
 
-        <Button
-            android:id="@+id/btnVerifica"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:onClick="btnVerifiarQb"
-            android:text="@string/verificar"
-            android:textStyle="bold" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="80dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnVerifica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:onClick="btnVerifiarQb"
+                android:text="@string/verificar"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnVoltar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:onClick="btnVoltar"
+                android:text="@string/voltar"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </LinearLayout>
+
 </LinearLayout>

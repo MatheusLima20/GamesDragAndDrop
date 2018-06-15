@@ -22,12 +22,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnQbCabeca"
+            android:id="@+id/btnCabeca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="5"
@@ -41,6 +41,24 @@
             android:layout_weight="1"
             android:text="Quebra Cabeça Slider"
             android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_weight="5"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="About"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
 </LinearLayout>

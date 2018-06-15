@@ -1,6 +1,8 @@
 package com.example.mateu.gamesdraganddrop;
 
 import android.content.ClipData;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +12,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -26,14 +27,35 @@ public class ActQuebraCabeca extends AppCompatActivity implements View.OnDragLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_quebra_cabeca);
+        setTitle("Quebra Cabeça");
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        inicializaComponentes();
+        inicializaAtributos();
 
     }
 
-    private void inicializaComponentes(){
+    private void inicializaAtributos(){
 
-        tabuleiro = new Tabuleiro();
+        int[] imgs = {
+                R.drawable.img1,
+                R.drawable.img2,
+                R.drawable.img3,
+                R.drawable.img4,
+                R.drawable.img5,
+                R.drawable.img6,
+                R.drawable.img7,
+                R.drawable.img8,
+                R.drawable.img9,
+                R.drawable.img10,
+                R.drawable.img11,
+                R.drawable.img12,
+                R.drawable.img13,
+                R.drawable.img14,
+                R.drawable.img15,
+                R.drawable.img16
+        };
+
+        tabuleiro = new Tabuleiro(imgs);
 
         lLImgsQuebraCabeca = findViewById(R.id.lLImgsQuebraCabeca);
 
@@ -154,4 +176,10 @@ public class ActQuebraCabeca extends AppCompatActivity implements View.OnDragLis
 
     }
 
+    public void btnVoltar(View view) {
+
+        Intent i = new Intent(this, ActMain.class);
+        startActivity(i);
+
+    }
 }

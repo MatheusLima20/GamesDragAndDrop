@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".ActMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActQuebraCabeca" />
-        <activity android:name=".ActQuebraCabecaSlider"></activity>
-
+        <activity android:name=".ActQuebraCabecaSlider" />
+        <activity android:name=".ActAbout"></activity>
     </application>
 
 </manifest>

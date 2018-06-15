@@ -1,6 +1,7 @@
 package com.example.mateu.gamesdraganddrop;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,10 +14,13 @@ public class ActMain extends AppCompatActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        findViewById(R.id.btnQbCabeca).setOnClickListener(this);
+        findViewById(R.id.btnCabeca).setOnClickListener(this);
 
         findViewById(R.id.btnQbSlider).setOnClickListener(this);
+
+        findViewById(R.id.btnAbout).setOnClickListener(this);
 
     }
 
@@ -26,15 +30,21 @@ public class ActMain extends AppCompatActivity implements OnClickListener {
 
         Button btn = (Button) v;
 
-        if(btn.getId() == R.id.btnQbCabeca){
+        if(btn.getId() == R.id.btnCabeca){
 
             Intent intent = new Intent(this, ActQuebraCabeca.class);
 
             startActivity(intent);
 
-        }else{
+        }else if (btn.getId() == R.id.btnQbSlider){
 
             Intent intent = new Intent(this, ActQuebraCabecaSlider.class);
+
+            startActivity(intent);
+
+        }else {
+
+            Intent intent = new Intent(this, ActAbout.class);
 
             startActivity(intent);
 
